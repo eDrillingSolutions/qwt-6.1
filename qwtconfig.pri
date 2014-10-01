@@ -9,7 +9,7 @@
 
 QWT_VER_MAJ      = 6
 QWT_VER_MIN      = 1
-QWT_VER_PAT      = 0
+QWT_VER_PAT      = 2
 QWT_VERSION      = $${QWT_VER_MAJ}.$${QWT_VER_MIN}.$${QWT_VER_PAT}
 
 ######################################################################
@@ -116,7 +116,7 @@ QWT_CONFIG     += QwtOpenGL
 # Otherwise you have to build it from the designer directory.
 ######################################################################
 
-QWT_CONFIG     += QwtDesigner
+#QWT_CONFIG     += QwtDesigner
 
 ######################################################################
 # Compile all Qwt classes into the designer plugin instead
@@ -161,3 +161,13 @@ macx:!static:CONFIG(qt_framework, qt_framework|qt_no_framework) {
 
     QWT_CONFIG += QwtFramework
 }  
+
+######################################################################
+# Create and install pc files for pkg-config
+# See http://www.freedesktop.org/wiki/Software/pkg-config/
+######################################################################
+
+unix {
+
+    #QWT_CONFIG     += QwtPkgConfig
+}
